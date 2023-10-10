@@ -19,5 +19,62 @@
     <!-- TEXTO PRINCIPAL -->
     <h2>Comparte m&uacute;sica</h2>
     <p>Haz un cancionero con tus canciones favoritas</p>
+    <!-- CONTAINER Y MODAL INICIAL-->
+    <main class="container">
+        <section class="crud">
+            <h1 class="crud_title">Ingresa tus canciones</h1>
+            <button class="button agregar" onclick="abrirModal()">Agregar canci&oacute;n</button>
+
+            <div id="modal" class="modal-background">
+                <div class="modal-agregar">
+                    <h2 class="estas">&iquest;Qué estás escuchando?</h2>
+                    <p>Agrega las canciones que quieras</p><br>
+                    <form id="formRegister" class="crud_form">
+                        <input type="text" placeholder="Canci&oacute;n" id="cancioninput" class="form_input">
+                        <input type="text" placeholder="Artista" id="artistainput" class="form_input">
+                        <button type="submit" id="submitbutton" class="button button--primary">Agregar</button>
+                    </form>
+                    
+                    <button class="button agregar" onclick="cerrarModal()">Cerrar</button>
+                    
+                </div>
+                
+                <div class="modal-editar"></div>
+            </div>
+            <table class="crudtable" id="tablaDatos">
+                <thead>
+                    <tr>
+                        <th class="table_header">Canción</th>
+                        <th class="table_header">Artista</th>
+                        <th class="table_header">Editar</th>
+                    </tr>
+                </thead>
+
+           <!-- MODAL OCULTA PARA EDITAR -->  
+                         
+                <tbody id="tablebody" class="table_body">
+                    <div id="modalEditar" class="modal-background" style="display: none;">
+                        <div class="modal-agregar">
+                            <h2 class="estas">Editar canción</h2>
+                            <form id="formEditar" class="crud_form">
+                                <input type="text" placeholder="Nueva Canción" id="editCancion" class="form_input">
+                                <input type="text" placeholder="Nuevo Artista" id="editArtista" class="form_input">
+                                <button type="button" id="guardarEdicion" class="button despuesedicion button--primary">Guardar Cambios</button>
+                                <button type="button" id="cancelarEdicion" class="button despuesedicion">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+<!-- FOOTER -->
+    <footer>
+        Proyecto CRUD de prueba
+    </footer>
+<!-- JAVA -->
+    <script src="app.js"></script>
 </body>
 </html>
